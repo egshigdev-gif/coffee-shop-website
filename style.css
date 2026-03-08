@@ -174,6 +174,31 @@
     border-radius: 14px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
+    text-align: left;
+  }
+  
+  .stars {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    color: #c17b47;
+  }
+  
+  .review-text {
+    margin-bottom: 16px;
+    font-style: italic;
+    color: #4b2e2e;
+  }
+  
+  .testimonial-card h4 {
+    color: #4b2e2e;
+    margin-bottom: 4px;
+  }
+  
+  .review-role {
+    display: block;
+    font-size: 0.9rem;
+    color: #7a675a;
   }
   
   .menu-card:hover,
@@ -348,12 +373,74 @@
     margin-bottom: 6px;
     font-size: 0.95rem;
   }
+
+  .footer a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+  
+  .footer a:hover {
+    opacity: 0.75;
+  }
   
   .copyright {
     text-align: center;
     margin-top: 12px;
     font-size: 0.92rem;
     opacity: 0.9;
+  }
+
+  .thank-you-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  
+  .thank-you-card {
+    background: white;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    max-width: 600px;
+    text-align: center;
+  }
+  
+  .thank-you-card h1 {
+    color: #4b2e2e;
+    margin-bottom: 16px;
+  }
+  
+  .thank-you-card p {
+    margin-bottom: 24px;
+  }
+  
+  .thank-you-icon {
+    font-size: 2.4rem;
+    margin-bottom: 14px;
+  }
+
+  .menu-card,
+  .testimonial-card,
+  .contact-info,
+  .contact-form,
+  .hours-box,
+
+  .gallery-grid img {
+    animation: fadeUp 0.7s ease both;
+  }
+  
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   
   @media (max-width: 900px) {
