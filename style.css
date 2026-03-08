@@ -324,6 +324,20 @@
     color: #6d5a4e;
   }
   
+  .form-message {
+    font-size: 0.95rem;
+    margin-top: 4px;
+    font-weight: 500;
+  }
+  
+  .form-message.success {
+    color: #2e7d32;
+  }
+  
+  .form-message.error {
+    color: #c62828;
+  }
+  
   .footer {
     background: #4b2e2e;
     color: white;

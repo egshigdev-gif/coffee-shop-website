@@ -187,10 +187,12 @@
       </div>
 
       <form
+        id="contactForm"
         class="contact-form"
         name="contact"
         method="POST"
         data-netlify="true"
+        netlify
       >
         <input type="hidden" name="form-name" value="contact" />
 
@@ -201,6 +203,7 @@
 
         <button type="submit" class="btn">Send Message</button>
         <p class="form-note">We’ll get back to you within 24 hours.</p>
+        <p id="formMessage" class="form-message" aria-live="polite"></p>
       </form>
     </div>
   </section>
@@ -236,6 +239,48 @@
 
     <p class="copyright">© 2026 Mountain Coffee. All rights reserved.</p>
   </footer>
+
+  <script>
+    const contactForm = document.getElementById("contactForm");
+    const formMessage = document.getElementById("formMessage");
+
+    function encodeFormData(data) {
+      return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+    }
+
+    if (contactForm) {
+      contactForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(contactForm);
+        const data = Object.fromEntries(formData.entries());
+
+        try {
+          const response = await fetch("/", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: encodeFormData(data)
+          });
+
+          if (response.ok) {
+            formMessage.textContent = "Thank you! Your message has been sent successfully.";
+            formMessage.className = "form-message success";
+            contactForm.reset();
+          } else {
+            formMessage.textContent = "Sorry, something went wrong. Please try again.";
+            formMessage.className = "form-message error";
+          }
+        } catch (error) {
+          formMessage.textContent = "Sorry, something went wrong. Please check your connection and try again.";
+          formMessage.className = "form-message error";
+        }
+      });
+    }
+  </script>
 
 </body>
 </html>
