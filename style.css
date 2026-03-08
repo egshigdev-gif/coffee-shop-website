@@ -76,7 +76,7 @@
   }
   
   .hero-content {
-    max-width: 650px;
+    max-width: 680px;
     margin-top: 140px;
   }
   
@@ -96,7 +96,7 @@
   
   .hero-content p {
     font-size: 1.08rem;
-    max-width: 560px;
+    max-width: 580px;
     margin-bottom: 30px;
   }
   
@@ -116,12 +116,13 @@
     border: none;
     cursor: pointer;
     font-weight: 600;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
   }
   
   .btn:hover {
     transform: translateY(-2px);
     opacity: 0.95;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
   }
   
   .btn-secondary {
@@ -159,6 +160,34 @@
     font-size: 1rem;
   }
   
+  .info-strip {
+    padding-top: 36px;
+    padding-bottom: 12px;
+    background: #f8f5f2;
+  }
+  
+  .info-strip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }
+  
+  .info-pill {
+    background: white;
+    border-radius: 14px;
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    font-weight: 500;
+  }
+  
+  .info-pill-icon {
+    font-size: 1.1rem;
+  }
+  
   .menu-section {
     background: white;
   }
@@ -186,7 +215,8 @@
   .menu-card:hover,
   .testimonial-card:hover,
   .why-card:hover,
-  .gallery-grid img:hover {
+  .gallery-grid img:hover,
+  .info-pill:hover {
     transform: translateY(-6px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
   }
@@ -200,6 +230,7 @@
   .menu-card p,
   .why-card p {
     margin-bottom: 16px;
+    color: #5f4a3f;
   }
   
   .menu-card span {
@@ -442,6 +473,31 @@
     margin-bottom: 14px;
   }
   
+  .back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #c17b47;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    z-index: 1000;
+  }
+  
+  .back-to-top:hover {
+    transform: translateY(-3px);
+    opacity: 0.95;
+  }
+  
   .menu-card,
   .testimonial-card,
   .contact-info,
@@ -449,7 +505,8 @@
   .hours-box,
   .why-card,
   .gallery-grid img,
-  .thank-you-card {
+  .thank-you-card,
+  .info-pill {
     animation: fadeUp 0.7s ease both;
   }
   
@@ -552,12 +609,20 @@
     .menu-grid,
     .testimonials-grid,
     .why-us-grid,
-    .gallery-grid {
+    .gallery-grid,
+    .info-strip-grid {
       grid-template-columns: 1fr;
     }
   
     .nav-links {
       gap: 10px 14px;
       font-size: 0.95rem;
+    }
+  
+    .back-to-top {
+      right: 16px;
+      bottom: 16px;
+      width: 44px;
+      height: 44px;
     }
   }
